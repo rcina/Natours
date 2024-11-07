@@ -30,6 +30,7 @@ $breakpoint argument choices
 - tab-land
 - big-desktop
 
+ORDER: Base + typography > generaly layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
