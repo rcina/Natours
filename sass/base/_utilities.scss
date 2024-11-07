@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
 
 .u-center-text {
   text-align: center !important;
@@ -10,10 +11,18 @@
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important;
+
+  @include mixins.respond(tab-port) {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important;
+
+  @include mixins.respond(tab-port) {
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-margin-top-big {
