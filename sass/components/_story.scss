@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
 
 .story {
   width: 75%;
@@ -11,9 +12,18 @@
   font-size: variables.$default-font-size;
   transform: skewX(-12deg);
 
-  & > * {
-    transform: skewX(12deg);
+  @include mixins.respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
   }
+
+  @include mixins.respond(phone) {
+    transform: skewX(0);
+  }
+  // & > * {
+  //   transform: skewX(12deg);
+  // }
 
   &__shape {
     width: 15rem;
@@ -23,6 +33,10 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skew(12deg);
     position: relative;
+
+    @include mixins.respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -34,6 +48,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include mixins.respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {
